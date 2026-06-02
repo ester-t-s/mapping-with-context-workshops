@@ -1,0 +1,225 @@
+@font-face {
+    font-family: "Albert Sans";
+    src: url(fonts/Albert_Sans/AlbertSans-VariableFont_wght.ttf);
+}
+
+
+:root {
+    --background:       #300326;
+    --type:             #FEFCF0;
+    --highlight:        #e9ed1e;
+
+
+    /* Typography */
+    --font-display: "Unbounded", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-body:   "Albert Sans", "Inter", Arial, sans-serif;
+
+    /* Spacing */
+    --space-xs:  0.5rem;
+    --space-sm:  1rem;
+    --space-md:  2rem;
+    --space-lg:  4rem;
+    --space-xl:  6rem;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+main {
+    container-type: inline-size;
+}
+
+body {
+    font-size: 1rem;
+    background-color: var(--background);
+    color: var(--type);
+    margin-inline: auto;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+    max-width: 1000px;
+    padding: 0 var(--space-md);
+    font-family: var(--font-body);
+    line-height: 1.2;
+    align-self: center;
+}
+
+/* Headings use the display serif */
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+h1 {
+    margin-bottom: var(--space-sm);
+    font-size: 3rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    color: var(--background);
+    z-index: 1;
+    padding: 0px 15px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0;
+        background-color: var(--highlight);
+        border-radius: 4px;
+        animation: drift 10s ease-in-out infinite;
+        transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+    }
+
+    &:hover::before {
+        /* on hover it settles */
+        animation: none; 
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+h2 {
+  position: relative; /* Needed to anchor the line */
+  margin-top: var(--space-md);
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.2em; /* Distance from text */
+    width: 100%;
+    height: 0.4em;
+    background-color: var(--highlight);
+    
+    /* The "Magic": Start with 0 width for an entrance animation */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-out;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+    }
+}
+
+.surtitle {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+
+}
+
+p, footer {
+    font-family: var(--font-body)
+}
+
+a {
+    color: inherit;
+    text-decoration: underline dotted;
+    text-underline-offset: 5px;
+    &:hover {
+        color: var(--highlight);
+    }
+}
+
+.workshop-column a:hover {
+    color: inherit;
+    font-weight: 500;
+}
+
+.intro {
+    font-size: 1.1rem;
+    line-height: 1.65;
+}
+
+section.workshops {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 400px;
+
+    div.workshop-column {
+        flex: 1;
+        background: var(--type);
+        color: var(--background);
+        font-weight: 300;
+        overflow: clip;
+        overflow-clip-margin: content-box;
+        transition: box-shadow 0.2s ease, flex 0.4s ease;
+        cursor: pointer;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 0 3px var(--highlight); 
+
+        h3 {
+            font-size: 1em;
+        }
+
+        .surtitle {
+            line-height: 1.2;
+        }
+
+        &.active {
+            flex: 4;
+        }
+
+        &:hover {
+            box-shadow: 0 0 0 3px var(--highlight), inset 0 0 0 3px var(--highlight); ; 
+        }
+    }    
+}
+
+.workshops-wrapper {
+  container-type: inline-size;
+  width: 100%; /* Or whatever width you want */
+}
+
+@container (width < 600px) {
+    section.workshops {
+        flex-direction: column;
+        height: 600px;
+    }
+}
+
+@container (width > 700px) {
+    .intro {
+        columns: 2;
+        column-gap: var(--space-lg);
+        line-height: 1.4;
+    }
+}
+
+footer {
+    margin-top: var(--space-lg);
+
+    span {
+        margin: 1vw;
+    }
+    :first-child {
+        margin-left: 0;
+    }
+    :last-child {
+        margin-right: 0;
+    }
+
+}
+
+
+
+/* Define the "Drifting" motion of the title */
+@keyframes drift {
+  0% {
+    transform: translate(8px, 5px) rotate(-1deg);
+  }
+  50% {
+    /* Move slightly further and rotate the other way */
+    transform: translate(10px, 8px) rotate(1deg);
+  }
+  100% {
+    transform: translate(8px, 5px) rotate(-1deg);
+  }
+}
+

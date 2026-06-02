@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Workshops: Mapping with Context</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=unbounded:200,300,400,600,700" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <header>
+            <div class="header-content">
+                <div class="surtitle">A Practicioner's workshop</div>
+                <h1>How to map with context</h1>
+            </div>
+        </header>
+
+        <main>
+            <p class="intro">
+                My Ph.D. research in cartography examines the role of context in promoting responsible data practices in the mapmaking process. 
+                The core of my research project consists of workshops with data visualization and mapmaking practitioners, 
+                in which we explore strategies, needs, and prototypes for embedding the data production context in the visualization workflow.
+                I conduct these workshops in various settings and details about them can be found below.
+            </p>
+            <div class="workshops-wrapper">
+                <h2>Individual Workshops</h2>
+                <p>Click on a section to read more</p>
+                <section class="workshops">
+                    <div class="workshop-column" onclick="expand(this)">
+                        <div class="surtitle">How to Map with Context</div>
+                        <h3>EuroCarto Conference 2026</h3>
+                        <p>
+                        </p>
+                        <a href="https://eurocarto2026.org/">Link to conference</a>
+                    </div>
+                    <div class="workshop-column" onclick="expand(this)">
+                        <div class="surtitle">Considering Context: Approaches for Responsible Data Practices</div>
+                        <h3>IEEE Vis Conference 2026</h3>
+                        <a href="https://www.ieeevis.org/year/2026/welcome/">Link to conference</a>
+
+                    </div>
+                    <div class="workshop-column" onclick="expand(this)">more to come</div>
+                </section>
+            </div>
+
+            <section class="materials">
+                <h2>Workshop Materials</h2>
+                <p>Workshop materials will be published here in due time.</p>
+            </section>
+
+            <section class="background">
+                <h2>Thematic Background</h2>
+                <p>More info to come soon</p>
+            </section>
+
+            <section class="about-me">
+                <h2>About Me</h2>
+                <p>More info to come soon</p>
+            </section>
+        </main>
+
+        <footer>
+            <span>Ester Scheck</span>
+            <span>·</span>
+            <span><a href="https://cartography.tuwien.ac.at/ester-scheck/">TU Wien</a></span>
+            <span>·</span>
+            <span><a href="mailto:ester.scheck@geo.tuwien.ac.at">ester.scheck@geo.tuwien.ac.at</a></span>
+        </footer>
+
+    </body>
+
+    <script>
+        function expand(el) {
+            document.querySelectorAll('.workshop-column').forEach(col => col.classList.remove('active'));
+            el.classList.add('active');
+        }
+    </script>
+</html>
+
