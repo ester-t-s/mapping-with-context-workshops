@@ -5,15 +5,14 @@
         <title>Workshops: Mapping with Context</title>
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
         <link rel="stylesheet" href="style.css">
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=unbounded:200,300,400,600,700" rel="stylesheet" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
     </head>
     <body>
         <header>
             <div class="header-content">
                 <div class="surtitle">A Practicioner's workshop</div>
-                <h1>How to map with context</h1>
+                <h1 data-splitting>How to map with context</h1>
             </div>
         </header>
 
@@ -75,7 +74,9 @@
         function expand(el) {
             document.querySelectorAll('.workshop-column').forEach(col => col.classList.remove('active'));
             el.classList.add('active');
-        }
+        };
+
+        Splitting();
     </script>
 </html>
 

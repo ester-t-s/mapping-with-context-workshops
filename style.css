@@ -3,6 +3,11 @@
     src: url(fonts/Albert_Sans/AlbertSans-VariableFont_wght.ttf);
 }
 
+@font-face {
+    font-family: "Unbounded";
+    src: url(fonts/Unbounded/Unbounded-VariableFont_wght.ttf);
+}
+
 
 :root {
     --background:       #300326;
@@ -20,6 +25,8 @@
     --space-md:  2rem;
     --space-lg:  4rem;
     --space-xl:  6rem;
+
+    --max-width: 1000px;
 }
 
 html {
@@ -27,22 +34,42 @@ html {
     scroll-behavior: smooth;
 }
 
-main {
-    container-type: inline-size;
-}
-
 body {
     font-size: 1rem;
     background-color: var(--background);
     color: var(--type);
-    margin-inline: auto;
-    margin-top: var(--space-lg);
-    margin-bottom: var(--space-sm);
-    max-width: 1000px;
-    padding: 0 var(--space-md);
+    margin: 0;
+    padding: 0;
     font-family: var(--font-body);
     line-height: 1.2;
-    align-self: center;
+}
+
+main {
+    container-type: inline-size;
+    max-width: var(--max-width);
+    padding-inline: var(--space-md);
+    margin-inline: auto;
+}
+
+
+
+header {
+    width: 100%;
+    background-color: var(--highlight);
+    padding-top: var(--space-lg);
+    height: 30vh;
+
+
+    .header-content {
+        max-width: var(--max-width);
+        color: var(--background);
+        max-width: var(--max-width);
+        margin-inline: auto;
+        padding-inline: var(--space-md);
+        padding-block: var(--space-md);
+    }
+
+
 }
 
 /* Headings use the display serif */
@@ -54,30 +81,15 @@ h1, h2, h3, h4 {
 
 h1 {
     margin-bottom: var(--space-sm);
-    font-size: 3rem;
-    font-weight: 700;
+    font-size: 3.5rem;
     position: relative;
     display: inline-block;
-    color: var(--background);
-    z-index: 1;
-    padding: 0px 15px;
+    font-variation-settings: 'wght' 100, 'wdth' 85;
 
-    &::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        inset: 0;
-        background-color: var(--highlight);
-        border-radius: 4px;
-        animation: drift 10s ease-in-out infinite;
-        transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
-    }
-
-    &:hover::before {
-        /* on hover it settles */
-        animation: none; 
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 1;
+    .char {
+        --delay: calc((var(--char-index) + 1) * 100ms);
+        animation: breathe 6000ms infinite both;
+        animation-delay: var(--delay);
     }
 }
 
@@ -194,6 +206,9 @@ section.workshops {
 
 footer {
     margin-top: var(--space-lg);
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: var(--space-md);
 
     span {
         margin: 1vw;
@@ -206,8 +221,6 @@ footer {
     }
 
 }
-
-
 
 /* Define the "Drifting" motion of the title */
 @keyframes drift {
@@ -223,3 +236,15 @@ footer {
   }
 }
 
+@keyframes breathe {
+  0% {
+    font-variation-settings: 'wght' 200, 'wdth' 85;
+  }
+  60% {
+    font-variation-settings: 'wght' 600, 'wdth' 100;
+  }
+  
+  100% {
+    font-variation-settings: 'wght' 200, 'wdth' 85;
+  }
+}
