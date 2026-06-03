@@ -88,7 +88,7 @@ h1 {
 
     .char {
         --delay: calc((var(--char-index) + 1) * 100ms);
-        animation: breathe 6000ms infinite both;
+        animation: breathe 4000ms infinite both;
         animation-delay: var(--delay);
     }
 }
@@ -241,7 +241,7 @@ footer {
     font-variation-settings: 'wght' 200, 'wdth' 85;
   }
   60% {
-    font-variation-settings: 'wght' 600, 'wdth' 100;
+    font-variation-settings: 'wght' 350, 'wdth' 90;
   }
   
   100% {
