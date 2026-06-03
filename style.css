@@ -79,7 +79,29 @@ h1 {
         transform: translate(0, 0) rotate(0deg);
         opacity: 1;
     }
+    a{
+        text-decoration: none;
+        &:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
 }
+
+/* Define the "Drifting" motion of the title */
+@keyframes drift {
+  0% {
+    transform: translate(8px, 5px) rotate(-1deg);
+  }
+  50% {
+    /* Move slightly further and rotate the other way */
+    transform: translate(10px, 8px) rotate(1deg);
+  }
+  100% {
+    transform: translate(8px, 5px) rotate(-1deg);
+  }
+}
+
 
 h2 {
   position: relative; /* Needed to anchor the line */
@@ -112,8 +134,12 @@ h2 {
 
 }
 
-p, footer {
+p, div, footer {
     font-family: var(--font-body)
+}
+
+p {
+    margin-top: var(--space-xs);
 }
 
 a {
@@ -209,19 +235,8 @@ footer {
 
 }
 
-
-
-/* Define the "Drifting" motion of the title */
-@keyframes drift {
-  0% {
-    transform: translate(8px, 5px) rotate(-1deg);
-  }
-  50% {
-    /* Move slightly further and rotate the other way */
-    transform: translate(10px, 8px) rotate(1deg);
-  }
-  100% {
-    transform: translate(8px, 5px) rotate(-1deg);
-  }
+section.imprint {
+    div {
+        line-height: 1.65;
+    }
 }
-
