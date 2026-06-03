@@ -194,6 +194,8 @@ section.workshops {
 
 footer {
     margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+
 
     span {
         margin: 1vw;
