@@ -20,6 +20,9 @@
     --space-md:  2rem;
     --space-lg:  4rem;
     --space-xl:  6rem;
+
+    /* Widths */
+    --max-content-width: 650px;
 }
 
 html {
@@ -38,17 +41,20 @@ body {
     font-size: 1rem;
     background-color: var(--background);
     color: var(--type);
-    margin-inline: auto;
     margin-top: var(--space-lg);
     margin-bottom: var(--space-sm);
-    max-width: 1000px;
     padding: 0 var(--space-md);
     font-family: var(--font-body);
     line-height: 1.2;
     align-self: center;
 }
 
-/* Headings use the display serif */
+.container {
+  max-width: var(--max-content-width);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
 h1, h2, h3, h4 {
     font-family: var(--font-display);
     font-weight: 600;
@@ -68,9 +74,6 @@ header {
     display: block;
 
     .header-content {
-        max-width: var(--max-width);
-        margin-inline: auto;
-        padding-inline: var(--space-md);
         position: relative;
         z-index: 2; /* Keeps text above the animation */
     }
@@ -106,7 +109,7 @@ header {
 
 h1 {
     margin-bottom: var(--space-sm);
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     position: relative;
     display: inline-block;
@@ -150,6 +153,7 @@ h2 {
   position: relative; /* Needed to anchor the line */
   margin-top: var(--space-md);
   display: inline-block;
+  margin-bottom: var(--space-xs);
 
   &::after {
     content: "";
@@ -195,21 +199,28 @@ a {
     }
 }
 
-.workshop-column a:hover {
-    color: inherit;
-    font-weight: 500;
+em {
+    font-style: normal;
+    font-weight: 700;
 }
 
 .intro {
-    font-size: 1.1rem;
-    line-height: 1.65;
+    p {
+        font-size: 1.1rem;
+        line-height: 1.45;
+    }
 }
 
-section.workshops {
+section.workshops-wrapper {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     gap: 10px;
-    height: 400px;
+    align-items: stretch;
+    max-height: 350px;
+    max-width: 1000px;
+    margin-inline: auto;
+
 
     div.workshop-column {
         flex: 1;
@@ -218,6 +229,7 @@ section.workshops {
         font-weight: 300;
         overflow: clip;
         overflow-clip-margin: content-box;
+
         transition: box-shadow 0.2s ease, flex 0.4s ease;
         cursor: pointer;
         padding: 20px;
@@ -237,38 +249,58 @@ section.workshops {
         }
 
         &:hover {
-            box-shadow: 0 0 0 3px var(--highlight), inset 0 0 0 3px var(--highlight); ; 
+            box-shadow: 0 0 0 3px var(--highlight), inset 0 0 0 3px var(--highlight);
         }
-    }    
+    }  
+    .workshop-column a:hover {
+        color: inherit;
+        font-weight: 500;
+    }  
 }
 
-.workshops-wrapper {
-  container-type: inline-size;
-  width: 100%; /* Or whatever width you want */
+
+
+.bibliography {
+    font-size: smaller;
+    font-style: italic;
+    line-height: 1.4;
 }
 
-@container (width < 600px) {
-    section.workshops {
+@media (width < 730px) {
+    section.workshops-wrapper {
         flex-direction: column;
-        height: 600px;
+        max-height: none;
+
+        div.workshop-column {
+            cursor: default;
+            &:hover {
+                box-shadow: 0 0 0 3px var(--highlight); 
+            }
+        }
     }
+
+    section.workshops-intro p {
+        visibility: hidden; /* hide because accordeon interaction does not work on mobile */
+    }
+
+    header {
+        padding-inline: var(--space-md);
+    }
+
+
 }
 
-@container (width > 700px) {
-    .intro {
-        columns: 2;
-        column-gap: var(--space-lg);
-        line-height: 1.4;
-    }
+.materials {
+    align-items: center;
 }
 
 footer {
     margin-top: var(--space-lg);
     margin-bottom: var(--space-sm);
-
+    font-size: small;
 
     span {
-        margin: 1vw;
+        margin: 0.5vw;
     }
     :first-child {
         margin-left: 0;
