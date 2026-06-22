@@ -23,50 +23,143 @@
         </header>
 
         <main>
-            <p class="intro">
-                My Ph.D. research in cartography examines the role of context in promoting responsible data practices in the mapmaking process. 
-                The core of my research project consists of workshops with data visualization and mapmaking practitioners, 
-                in which we explore strategies, needs, and prototypes for embedding the data production context in the visualization workflow.
-                I conduct these workshops in various settings and details about them can be found below.
-            </p>
-            <div class="workshops-wrapper">
+            <section class="intro container">
+                <p>
+                    My Ph.D. research in cartography examines how the context of data production can strengthen responsible and critical mapmaking. 
+                    Through workshops with data visualization and mapmaking practitioners, 
+                    I explore strategies and prototypes for embedding data provenance and context context into visualization workflows.
+                </p>
+            </section>
+
+            <section class="workshops-intro container">
                 <h2>Individual Workshops</h2>
                 <p>Click on a section to read more</p>
-                <section class="workshops">
-                    <div class="workshop-column" onclick="expand(this)">
-                        <div class="surtitle">How to Map with Context</div>
-                        <h3>EuroCarto Conference 2026</h3>
-                        <p>
-                        </p>
-                        <a href="https://eurocarto2026.org/">Link to conference</a>
-                    </div>
-                    <div class="workshop-column" onclick="expand(this)">
-                        <div class="surtitle">Considering Context: Approaches for Responsible Data Practices</div>
-                        <h3>IEEE Vis Conference 2026</h3>
-                        <a href="https://www.ieeevis.org/year/2026/welcome/">Link to conference</a>
+            </section>
 
-                    </div>
-                    <div class="workshop-column" onclick="expand(this)">more to come</div>
-                </section>
-            </div>
+            <section class="workshops-wrapper">
+                <div class="workshop-column" onclick="expand(this)">
+                    <div class="surtitle">How to Map with Context</div>
+                    <h3>EuroCarto Conference 2026</h3>
+                    <a href="https://eurocarto2026.org/">Link to conference</a>
+                    <p>
+                        Just as every map is based on the mapmaker’s conscious and unconscious decisions, 
+                        every dataset – the basis of any map – is shaped by its production context. 
+                        So, what can it look like to research and reflect on the dataset production context as part of mapmaking?
+                        By focusing on participant perspectives, this workshop at the European Cartographic Conference 2026
+                        fosters the exchange and development of ideas needed to strengthen responsible data practices and integrate production context into the mapmaking workflow.
+                    </p>
+                </div>
+                <div class="workshop-column" onclick="expand(this)">
+                    <div class="surtitle">Considering Context: Approaches for Responsible Data Practices</div>
+                    <h3>IEEE Vis Conference 2026</h3>
+                    <a href="https://www.ieeevis.org/year/2026/welcome/">Link to conference</a>
+                    <p>
+                        This half-day workshop is co-organized with <a href="https://www.maxwell.syr.edu/directory/meghan-kelly">Meghan Kelly</a>.
+                        Apart from a keynote (speaker will be announced soon) and some discussions in the big group,
+                        it will mostly be organised in interactive and creative small group exercises.
+                        Embedded in a broader data viz context, we will also discuss the special challenges
+                        and benefits of maps as a visualization type that not only shows attributes but also spatial relations.
+                    </p>   
+                </div>
+                <div class="workshop-column" onclick="expand(this)">
+                    more to come
+                </div>
+            </section>
 
-            <section class="materials">
+            <section class="workshop-topic container">
+                <h2>Topic and design of the workshops</h2>
+                <p>
+                    Throughout the workshops, we will explore key questions together: 
+                    How do we research dataset backgrounds? 
+                    What information is required for a comprehensive fitness-for-use analysis? 
+                    How can we adapt our designs to data caveats?
+                    And how can we move beyond being “strangers in the dataset” (D'Ignazio & Klein, p. 130) and “bridge the gap between data and reality” (Lin et al., p. 1189)?
+                </p>
+                <p>
+                    The workshop will use creative, participatory methods (e.g. brainstorming, sketching, wireframing, and prototyping) to ensure inclusive engagement. 
+                    These activities are inspired by the four key steps in co-creation:
+                    <ul>
+                        <li>Engage and exchange: Share challenges and experiences with data caveats, and how to address them in analysis and visualization.</li>
+                        <li>Understand: Discussing user needs for a tool that supports researching and reflecting on dataset production context in visualization workflows.</li>
+                        <li>Ideation and brainstorming: Gather and cluster relevant information regarding dataset production contexts (general or use-case specific), explore useful formats, and sketch simple prototypes.</li>
+                        <li>Discuss and validate: Discuss (and optionally test) prototypes with other groups to refine ideas.</li>
+                    </ul>
+                </p>
+                <p>
+                    Centering practitioner perspectives, these workshops provide a space to brainstorm and prototype tools, guidelines, and strategies. 
+                    Together, we will explore how to navigate data positionality and the decisions behind its creation, 
+                    ultimately co-creating workflows for more responsible data practices.
+                </p>
+            </section>
+
+            <section class="background container">
+                <h2>Thematic Background</h2>
+                <p>
+                    <em>Data is never neutral or objective</em> (D'Ignazio & Klein, Loukissas, Dalton & Thatcher). 
+                    It is shaped by the production of data and “this context is essential for conducting accurate, ethical analysis” (D'Ignazio & Klein, p. 149). 
+                    While various <em>frameworks for documenting data production</em> (e.g., metadata, data biographies, and datasheets for datasets) exist, 
+                    responsible and reflexive data practices too often focus on data analysis processes and visualization decision-making and ethics. 
+                    To use data responsibly, practitioners must acknowledge the <em>entirety of the visualization process</em> beginning with data production. 
+                    In other words, acknowledging data’s positionality including their situatedness and contingency (Kitchin) 
+                    must be paired with concrete strategies to interrogate data production practices, 
+                    and innovative tools that make visible the production of data in analysis and visualization workflows.
+                </p>
+                <p>
+                    In my work, I define <em>responsible data practices</em> as an <em>intentional</em> way of working with data that
+                    <ul>
+                        <li>takes into account the fact that data is never neutral or objective, and therefore considers the context in which the data was produced.</li>
+                        <li>acts with responsibility for affected communities and considers possible (negative) consequences, aiming for an accurate, fair and equitable representation of communities and topics.</li>
+                    </ul>
+                </p>
+                <p class="bibliography">
+                    Dalton C. and Thatcher J., <a href="https://www.societyandspace.org/articles/what-does-a-critical-data-studies-look-like-and-why-do-we-care">What Does A Critical Data Studies Look Like, And Why Do We Care?</a>, 2014.<br>
+                    D’Ignazio C. and Klein L.F., <a href="https://mitpress.mit.edu/9780262547185/data-feminism/">Data Feminism</a>, 2020. <br>
+                    Kitchin R., <a href="https://www.politybooks.com/bookdetail?book_slug=9781509566525">Critical Data Studies: An A to Z Guide to Concepts and Methods</a>, 2025. <br>
+                    Lin H., Lisnic M., Akbaba D., Meyer M., and Lex A., <a href="doi.org/10.1109/TVCG.2025.3634821">Here’s what you need to know about my data: Exploring Expert Knowledge’s Role in Data Analysis</a>, 2026.<br>
+                    Loukissas Y. A., <a href="https://direct.mit.edu/books/oa-monograph/4323/All-Data-Are-LocalThinking-Critically-in-a-Data">All data are local: Thinking critically in a data-driven society</a>, 2019.<br>
+                </p>
+            </section>
+
+            <section class="target-group container">
+                <h2>Target group of the workshops</h2>
+                <p>These workshops are designed for practitioners with experience in mapping or data visualization who wish to use data (more) critically, responsibly, and ethically. 
+                    <ul>
+                        <li><em>Backgrounds:</em> All backgrounds are welcome.</li>
+                        <li><em>Focus:</em> While we primarily focus on quantitative data for thematic mapping,
+                        discussions and learnings can be transferred to a wide range of visualization use cases.</li>
+                    </ul>
+                </p>
+            </section>
+
+            <section class="participation container">
+                <h2>Participation and Registration</h2>
+                <p>
+                    Registration is managed directly through each event's host website. 
+                    No pre-workshop submissions or applications are required - just sign up and join the conversation!
+                </p>
+                <p>
+                    Please note that these workshops are part of an ongoing Ph.D. study. 
+                    To support this research, the workshop processes and results will be documented and analyzed.
+                    All data will be anonymized or pseudonymized.
+                </p>
+            </section>
+
+            <section class="materials container">
                 <h2>Workshop Materials</h2>
                 <p>Workshop materials will be published here in due time.</p>
             </section>
 
-            <section class="background">
-                <h2>Thematic Background</h2>
-                <p>More info to come soon</p>
-            </section>
-
-            <section class="about-me">
+            <section class="about-me container">
                 <h2>About Me</h2>
-                <p>More info to come soon</p>
+                <p>I am a social science graduate with a passion for data.
+                    I'm currently teaching web mapping and doing a PhD in cartography at TU Wien, Austria.
+                    Feel free to reach out via email or on <a href="https://www.linkedin.com/in/ester-s-/">LinkedIn</a>.
+                    I'm happy to exchange!
+                </p>
             </section>
         </main>
 
-        <footer>
+        <footer class="container">
             <span>Ester Scheck</span>
             <span>·</span>
             <span><a href="https://cartography.tuwien.ac.at/ester-scheck/">TU Wien</a></span>
