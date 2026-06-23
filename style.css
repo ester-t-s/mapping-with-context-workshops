@@ -283,7 +283,7 @@ section.workshops-wrapper {
         visibility: hidden; /* hide because accordeon interaction does not work on mobile */
     }
 
-    header {
+    .surtitle, h1 {
         padding-inline: var(--space-md);
     }
 
