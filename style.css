@@ -283,10 +283,19 @@ section.workshops-wrapper {
         visibility: hidden; /* hide because accordeon interaction does not work on mobile */
     }
 
-    .surtitle, h1 {
+    header .surtitle, h1 {
         padding-inline: var(--space-md);
     }
+}
 
+@media (width < 500px) {
+    .container {
+        padding-inline: var(--space-xs);
+    }
+
+    p, ul {
+        font-size: 1.2rem;
+    }
 
 }
 
@@ -298,6 +307,7 @@ footer {
     margin-top: var(--space-lg);
     margin-bottom: var(--space-sm);
     font-size: small;
+    line-height: 1.5;
 
     span {
         margin: 0.5vw;
